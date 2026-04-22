@@ -15,7 +15,7 @@ import jakarta.validation.constraints.NotNull;
 public class Usuario {
 
     @Id
-    @NotNull
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int usuarioid;
 
     @NotBlank
@@ -26,4 +26,7 @@ public class Usuario {
 
     @NotBlank
     String contraseñaUsuario;
+
+    @OneToOne()
+    private Gato gatos; 
 }

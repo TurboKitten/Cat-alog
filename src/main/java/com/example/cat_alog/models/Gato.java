@@ -36,6 +36,6 @@ public class Gato {
     @NotBlank
     String personalidad;
 
-    @OneToOne(mappedBy="usuarioid", )
+    @OneToOne()
     private Usuario tutor; 
 }
