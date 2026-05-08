@@ -1,11 +1,12 @@
 package com.example.cat_alog.service;
 
-import com.example.cat_alog.model.Usuario;
-import com.example.bibliotecaduoc.repository.UsuarioRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.example.cat_alog.model.Usuario;
+import com.example.cat_alog.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
@@ -26,13 +27,13 @@ public class UsuarioService {
     }
 
     public Usuario updateUsuario(Usuario usuario){
-        if (!usuarioRepository.existsById(usuario.getId())){
+        if (!usuarioRepository.existsById(usuario.getUsuarioid())){
             return null;
         }
         return usuarioRepository.save(usuario);
     }
 
     public void deleteUsuario(int id){
-        usuarioRepository.deteleById(id);
+        usuarioRepository.deleteById(id);
     }
 }
