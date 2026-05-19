@@ -26,6 +26,9 @@ public class Usuario {
     @NotBlank
     String contraseñaUsuario;
 
+    @NotBlank
+    String nacionalidadUsuario;
+
     @OneToOne()
     private Gato gatos; 
 }

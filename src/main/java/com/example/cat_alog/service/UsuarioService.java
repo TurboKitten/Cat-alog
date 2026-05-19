@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.cat_alog.dto.UsuarioNacionalidadDTO;
 import com.example.cat_alog.model.Usuario;
 import com.example.cat_alog.repository.UsuarioRepository;
 
@@ -24,7 +25,7 @@ public class UsuarioService {
 
     public Usuario getUsuarioId(int id){
         return usuarioRepository.findById(id).orElse(null);
-    }
+    }   
 
     public Usuario updateUsuario(Usuario usuario){
         if (!usuarioRepository.existsById(usuario.getUsuarioid())){
@@ -35,5 +36,14 @@ public class UsuarioService {
 
     public void deleteUsuario(int id){
         usuarioRepository.deleteById(id);
+    }
+
+    public List<UsuarioNacionalidadDTO> getUsuariosConNacionalidad() {
+        return usuarioRepository.findAll().stream()
+            .map(u -> new UsuarioNacionalidadDTO(
+                u.getNombreUsuario(),
+                u.getNacionalidadUsuario()
+            ))
+            .toList();
     }
 }

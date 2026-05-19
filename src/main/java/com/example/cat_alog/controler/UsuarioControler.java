@@ -1,5 +1,6 @@
 package com.example.cat_alog.controler;
 
+import com.example.cat_alog.dto.UsuarioNacionalidadDTO;
 import com.example.cat_alog.model.Usuario;
 import com.example.cat_alog.service.UsuarioService;
 import jakarta.validation.Valid;
@@ -56,5 +57,11 @@ public class UsuarioControler {
         System.out.println("[UsuarioController] -> eliminarUsuario id=" + usuarioid);
         usuarioService.deleteUsuario(usuarioid);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/con-nacionalidad")
+    public ResponseEntity<List<UsuarioNacionalidadDTO>> usuariosPorNacionalidad(){
+        System.out.println("[UsuarioControler] -> usuariosPorNacionalidad");
+        return ResponseEntity.ok(usuarioService.getUsuariosConNacionalidad());
     }
 }
