@@ -25,6 +25,9 @@ public class Gato {
     int meses;
 
     @NotBlank
+    String nombre;
+    
+    @NotBlank
     String raza;
 
     @NotBlank

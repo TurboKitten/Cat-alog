@@ -30,7 +30,7 @@ public class UsuarioControler {
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.saveUsuario(usuario));
     }
 
-    @GetMapping("/{usuarioid}")
+    @GetMapping("/id/{usuarioid}")
     public ResponseEntity<Usuario> buscarUsuario(@PathVariable int usuarioid){
         System.out.println("[UsuarioController] -> buscarUsuario id=" + usuarioid);
         Usuario usuario = usuarioService.getUsuarioId(usuarioid);
@@ -41,7 +41,7 @@ public class UsuarioControler {
         return ResponseEntity.ok(usuario);
     }
 
-    @PutMapping("/{usuarioid}")
+    @PutMapping("/id/{usuarioid}")
     public ResponseEntity<Usuario> actualizarUsuario(@PathVariable int usuarioid, @Valid @RequestBody Usuario usuario) {
         System.out.println("[UsuarioController] -> actualizarUsuario id=" + usuarioid);
         usuario.setUsuarioid(usuarioid);
@@ -52,7 +52,7 @@ public class UsuarioControler {
         return ResponseEntity.ok(actualizado);
     }
 
-    @DeleteMapping("/{usuarioid}")
+    @DeleteMapping("/id/{usuarioid}")
     public ResponseEntity<Void> eliminarUsuario(@PathVariable int usuarioid) {
         System.out.println("[UsuarioController] -> eliminarUsuario id=" + usuarioid);
         usuarioService.deleteUsuario(usuarioid);

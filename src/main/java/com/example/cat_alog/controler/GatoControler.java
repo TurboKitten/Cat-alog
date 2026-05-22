@@ -29,7 +29,7 @@ public class GatoControler {
         return ResponseEntity.status(HttpStatus.CREATED).body(gatoService.saveGato(gato));
     }
 
-    @GetMapping("/{gatoid}")
+    @GetMapping("/id/{gatoid}")
     public ResponseEntity<Gato> buscarGato(@PathVariable int gatoid){
         System.out.println("[GatoController] -> buscarGato id=" + gatoid);
         Gato gato = gatoService.getGatoId(gatoid);
@@ -40,7 +40,7 @@ public class GatoControler {
         return ResponseEntity.ok(gato);
     }
 
-    @PutMapping("/{gatoid}")
+    @PutMapping("/id/{gatoid}")
     public ResponseEntity<Gato> actualizarGato(@PathVariable int gatoid, @Valid @RequestBody Gato gato) {
         System.out.println("[GatoController] -> actualizarGato id=" + gatoid);
         gato.setGatoid(gatoid);
@@ -51,7 +51,7 @@ public class GatoControler {
         return ResponseEntity.ok(actualizado);
     }
 
-    @DeleteMapping("/{gatoid}")
+    @DeleteMapping("/id/{gatoid}")
     public ResponseEntity<Void> eliminarGato(@PathVariable int gatoid) {
         System.out.println("[GatoController] -> eliminarGato id=" + gatoid);
         gatoService.deleteGato(gatoid);

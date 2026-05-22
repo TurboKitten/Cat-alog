@@ -1,0 +1,330 @@
+{
+  "info": {
+    "_postman_id": "04e768d7-409f-413f-a41f-3e78e70a1085",
+    "name": "Cat-Alog.json",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55096794"
+  },
+  "item": [
+    {
+      "name": "DTO",
+      "item": [
+        {
+          "name": "DTOBuscarUsuarioNacionalidad",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios/con-nacionalidad",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios",
+                "con-nacionalidad"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Usuario",
+      "item": [
+        {
+          "name": "Listar Usuarios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Añadir Usuario",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombreUsuario\": \"Diego\",\r\n    \"correoUsuario\": \"diegogarrido@uc.cl\",\r\n    \"contraseñaUsuario\": \"Gatos\",\r\n    \"nacionalidadUsuario\": \"Chileno\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Usuario Por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios/id/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios",
+                "id",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Usuario",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombreUsuario\": \"Matias\",\r\n    \"correoUsuario\": \"matiasduncker@duoc.cl\",\r\n    \"contraseñaUsuario\": \"ElGato\",\r\n    \"nacionalidadUsuario\": \"Chileno\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios/id/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios",
+                "id",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Usuario",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios/id/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios",
+                "id",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Gato",
+      "item": [
+        {
+          "name": "Listar Gatos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/gatos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "gatos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Añadir Gato",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"años\": 2,\r\n    \"meses\": 3,\r\n    \"nombre\": \"Michus\",\r\n    \"raza\": \"Persa\",\r\n    \"color\": \"Naranja\",\r\n    \"pelaje\": \"Frondoso y con rayas\",\r\n    \"personalidad\": \"Tranquilo\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/gatos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "gatos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Gato por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/gatos/id/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "gatos",
+                "id",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Gato",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"años\": 4,\r\n    \"meses\": 3,\r\n    \"nombre\": \"Michus\",\r\n    \"raza\": \"Persa\",\r\n    \"color\": \"Naranja\",\r\n    \"pelaje\": \"Frondoso y con rayas\",\r\n    \"personalidad\": \"Tranquilo\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/gatos/id/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "gatos",
+                "id",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Gato",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/gatos/id/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "gatos",
+                "id",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "API",
+      "item": [
+        {
+          "name": "CatAPIGatoRandom",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/gato/random",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "gato",
+                "random"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
