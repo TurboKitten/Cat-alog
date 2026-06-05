@@ -6,5 +6,5 @@ import com.example.cat_alog.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
-
+    Optional<Usuario> findByUsername(String username);
 }
