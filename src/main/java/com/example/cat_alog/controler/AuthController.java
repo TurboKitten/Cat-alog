@@ -45,13 +45,13 @@ public class AuthController {
      */
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody AuthRequest request) {
-        if (usuarioRepository.findByUsername(request.getUsername()).isPresent()) {
+        if (usuarioRepository.findByNombreUsuario(request.getNombreUsuario()).isPresent()) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("El usuario ya existe");
         }
 
         Usuario usuario = new Usuario();
-        usuario.setUsername(request.getUsername());
-        usuario.setPassword(passwordEncoder.encode(request.getPassword()));
+        usuario.setNombreUsuario(request.getNombreUsuario());
+        usuario.setContraseñaUsuario(passwordEncoder.encode(request.getContraseñaUsuario()));
         usuario.setRole("ROLE_USER");
         usuarioRepository.save(usuario);
 
@@ -67,7 +67,7 @@ public class AuthController {
     public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
         try {
             Authentication auth = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
+                    new UsernamePasswordAuthenticationToken(request.getNombreUsuario(), request.getContraseñaUsuario())
             );
 
             String role = auth.getAuthorities().stream()
@@ -75,7 +75,7 @@ public class AuthController {
                     .map(GrantedAuthority::getAuthority)
                     .orElse("ROLE_USER");
 
-            String token = jwtUtil.generateToken(request.getUsername(), role);
+            String token = jwtUtil.generateToken(request.getNombreUsuario(), role);
             return ResponseEntity.ok(new AuthResponse(token));
 
         } catch (BadCredentialsException e) {

@@ -17,17 +17,20 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int usuarioid;
 
-    @NotBlank
+    @Column(unique = true, nullable = false)
     String nombreUsuario;
 
     @NotBlank
     String correoUsuario;
 
-    @NotBlank
+    @Column(nullable = false)
     String contraseñaUsuario;
 
     @NotBlank
     String nacionalidadUsuario;
+
+    @Column(nullable = false)
+    private String role;
 
     @OneToOne()
     private Gato gatos; 

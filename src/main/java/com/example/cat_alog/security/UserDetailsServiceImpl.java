@@ -26,14 +26,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private UsuarioRepository usuarioRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String nombreUsuario) throws UsernameNotFoundException {
         Usuario usuario = usuarioRepository
-                .findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado: " + username));
+                .findByNombreUsuario(nombreUsuario)
+                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado: " + nombreUsuario));
 
         return new User(
-                usuario.getUsername(),
-                usuario.getPassword(),
+                usuario.getNombreUsuario(),
+                usuario.getContraseñaUsuario(),
                 List.of(new SimpleGrantedAuthority(usuario.getRole()))
         );
     }
