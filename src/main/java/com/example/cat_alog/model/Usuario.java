@@ -1,10 +1,9 @@
 package com.example.cat_alog.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 
 @Data
 @AllArgsConstructor
@@ -15,21 +14,18 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int usuarioid;
+    private Integer id;
 
     @Column(unique = true, nullable = false)
-    String nombreUsuario;
-
-    @NotBlank
-    String correoUsuario;
+    private String username;
 
     @Column(nullable = false)
-    String contraseñaUsuario;
+    private String password;
 
-    @NotBlank
-    String nacionalidadUsuario;
-
+    /**
+     * Rol del usuario. Valores esperados: "ROLE_USER" o "ROLE_ADMIN".
+     * Spring Security usa el prefijo ROLE_ para los métodos hasRole().
+     */
     @Column(nullable = false)
     private String role;
-
 }

@@ -1,7 +1,7 @@
 package com.example.cat_alog;
 
 import com.example.cat_alog.model.Gato;
-import com.example.cat_alog.model.Usuario;
+import com.example.cat_alog.model.Usuario_Gatos;
 import com.example.cat_alog.service.GatoService;
 import com.example.cat_alog.controler.GatoControler;
 import org.junit.jupiter.api.Test;
@@ -26,7 +26,7 @@ class GatoControlerTest {
     @Test
     void crearGato_retorna201_cuandoExisteUsuario() {
 
-        Usuario usuario = new Usuario();
+        Usuario_Gatos usuario = new Usuario_Gatos();
         Gato gato = new Gato(1, 3, 1, "Donut", "Persa", "Marrona", "Frondosa", "Soberbia", usuario);
 
         // ""Simulamos""" el comportamiento del servicio (mock):

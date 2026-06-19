@@ -1,11 +1,12 @@
 package com.example.cat_alog.repository;
 
+import com.example.cat_alog.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.example.cat_alog.model.Usuario;
+
 import java.util.Optional;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
-    Optional<Usuario> findByNombreUsuario(String nombreUsuario);
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+    Optional<Usuario> findByUsername(String username);
 }

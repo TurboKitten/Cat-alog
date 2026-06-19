@@ -40,5 +40,5 @@ public class Gato {
     String personalidad;
 
     @OneToOne()
-    private Usuario tutor; 
+    private Usuario_Gatos tutor; 
 }
